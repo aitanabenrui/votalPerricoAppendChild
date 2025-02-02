@@ -39,6 +39,10 @@ h1{
     transform: scale(1.1);
 }
 
+.dogCard:hover{
+    transform: scale(1.02);
+}
+
 
 .button_form { /* esto afecta a los dos botones para añadir perritos*/
     font-family: Arial, sans-serif; 
