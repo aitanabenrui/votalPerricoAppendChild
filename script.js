@@ -84,13 +84,31 @@ function renderPerrico(dogImage, addToStart = false){ //recibe la URL de la imag
    //conidcional para que el botón de añadir un perrito delante funcione */
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-let newDogCard = document.createElement('div');
+    const newDogCard = document.createElement('div'); //creamos un div que contenga la info de la card de perrito
+    newDogCard.className = 'dogCard'; //al div le asignamos la clase dogCard previamente definida en el css
+    //añadimos ahora el resto de la card a innerHTML
+    newDogCard.innerHTML = `<img class="image" id="perro" alt="imagen de perro" src="${dogImage}"> 
+            <div class="cardVote" > 
+                <div class="voteCard">
+                    <p>😍 <span class="like-count"></span></p>
+                    <button class="like">Precioso</button> 
+                </div>
+                <div class="voteCard">
+                    <p>🤢 <span class="dislike-count"></span></p>
+                    <button class="dislike">Feísimo</button>
+                </div>
+            </div>`;
+    
+        //const dogList = document.querySelector('#dog-list');
+        //como definimos dogList al inicio del código podemos usarlo ahora para el appendChild
 
-    if (addToStart) {
-        dogList.insertAdjacentHTML('afterbegin', htmlAdd); // Añadir al principio
+    if (addToStart) { //selecciona el contenedor dogList y añade el nuevo elemento
+        dogList.prepend(newDogCard); // Añadir al principio del div con id dog-list el elemento que acabamos de crear
     } else {
-        dogList.insertAdjacentHTML('beforeend', htmlAdd); // Añadir al final
+        dogList.appendChild(newDogCard); // Añadir al final del div la card newDogCard
     }
+
+    //finalmente añadiremos los event listeners uan vez metidas las nuevas tarjetas en el DOM
     addSocialListeners(); //llama a addSocialListeners para que los nuevos botones funcionen
 }
 
