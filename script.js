@@ -281,6 +281,25 @@ document.querySelector('#add-1-perrico-start').addEventListener('click', functio
     addPerrico(true); 
 });
 
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//EVENT DELEGATION: se podría usar eventDelegatio en vez de la función addSocialListeners.
+//añade un solo addevent listener al div dogList que contiene las tarjetas de los perros
+//cuando ocurre un click en cualquier parte de ese div, se verifica si el elemento clicado (event.target) es un botón con la clase .like o .dislike
+
+
+/* dogList.addEventListener('click', function (event) {
+    if (event.target.classList.contains('like')) { //verifica si el click fue en un botón de like
+        const likeCountNode = event.target.previousElementSibling.querySelector('.like-count'); //si es así busca el contador de votos like-count en el hermano anterior (previousElementSibling)
+        likeCountNode.innerText = Number(likeCountNode.innerText) + 1; //se convierte el texto del contador en número y se le suma 1.
+    }
+
+    if (event.target.classList.contains('dislike')) {
+        const dislikeCountNode = event.target.previousElementSibling.querySelector('.dislike-count');
+        dislikeCountNode.innerText = Number(dislikeCountNode.innerText) + 1;
+    }
+});
+ */
+
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* //aplicación de setTimeout & intervals para añadir targetas de perros cada 10s
