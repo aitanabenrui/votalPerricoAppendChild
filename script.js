@@ -170,7 +170,7 @@ const addNegativeVotes = () => {
         if (dislikeCount > likeCount) {
             card.style.display = ''; // Mostrar si tiene más votos negativos, Restablece el estilo de la tarjeta
         } else {
-            card.style.display = 'none'; // Ocultar si no tiene más votos negativos
+            card.style.display = 'none'; // Ocultar si no tiene más votos negativos, también se puede eliminar el innerHTML hacer un filter con los perritos que tineen esta propiedad y rendrizar de nuevo solo los que cumplen la propiedad (en el caso de que tuvieramos la información metida en un objeto por ejemplo)
         }
     });
 };
