@@ -33,3 +33,5 @@ mostrarImagen(); */
 
 //await es necesario porque getRandomDogImag() s una función async, lo que significa que devulv una promesa
 //si llamamos a esta función sin await, obtendremos una promsae pendinte en lugar del valor ral (la url de la imágen)
+
+//el código asíncrono es aquel que no se ejecuta hasta que await no termine
