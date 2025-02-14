@@ -217,7 +217,7 @@ const addPerrico = async (addToStart = false)=>{ //cambiará a true si apretamos
     const perricoImg = await getRandomDogImage(); //la función getRandomDogImage se declara en el archivo api.js
     console.log(perricoImg);
 
-    document.querySelectorAll(".select").forEach(button =>{
+    document.querySelectorAll(".select").forEach(button =>{ //una vez se generen las cartas (con el await), entoncs el botón volverá a estar activo
         button.disabled = false; 
     })
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
