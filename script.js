@@ -212,7 +212,7 @@ const resetView = () => {
 const addPerrico = async (addToStart = false)=>{ //cambiará a true si apretamos el botón
 
     document.querySelectorAll(".select").forEach(button =>{
-        button.disabled = true; 
+        button.disabled = true; //s deshabilitarán los botones una vez pulsados y hasta que se carguen las tarjetas de perros no se volverán a activar
     })
     const perricoImg = await getRandomDogImage(); //la función getRandomDogImage se declara en el archivo api.js
     console.log(perricoImg);
