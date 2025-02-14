@@ -210,8 +210,16 @@ const resetView = () => {
 // Función para agregar un perrico aleatorio al array, llama a la función d la API para obtener una URL del perro
 
 const addPerrico = async (addToStart = false)=>{ //cambiará a true si apretamos el botón
+
+    document.querySelectorAll(".select").forEach(button =>{
+        button.disabled = true; 
+    })
     const perricoImg = await getRandomDogImage(); //la función getRandomDogImage se declara en el archivo api.js
     console.log(perricoImg);
+
+    document.querySelectorAll(".select").forEach(button =>{
+        button.disabled = false; 
+    })
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //este bloque de código es redundante: como addPerrico llama a renderPerrico inmepdiatamente después, además perricosArray no se usa más adelante en ningúan función relevante
     //renderPerrico ya maneja el posicionamiento, no hay dependencia entre el array y el DOM
